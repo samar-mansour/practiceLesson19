@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +34,7 @@ namespace PracticeLesson
         {
             if (num <= 0)
             {
-                Console.WriteLine($"{num}: Enter Valid Price");
+                this.price = num;
             }
         }
         public Newspaper(float price, Story[] story)
@@ -55,7 +55,7 @@ namespace PracticeLesson
 
         public override string ToString()
         {
-            return $"{base.ToString()} ";
+            return $"{base.ToString()} {this.GetPrice()} {this.Read()}";
         }
     }
 }
