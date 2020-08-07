@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+using System;
+using System.Reflection;
 
 namespace PracticeLesson
 {
@@ -13,9 +14,19 @@ namespace PracticeLesson
             return this.title;
         }
 
+        public void SetTitle(string title)
+        {
+            this.title = title;
+        }
+
         public string GetBody()
         {
             return this.body;
+        }
+
+        public void SetBody(string body)
+        {
+            this.body = body;
         }
 
         public string GetVisualStyle()
@@ -23,9 +34,13 @@ namespace PracticeLesson
             return this.visualStyle;
         }
 
-        public string SetVisualStyle(string text)
+        public void SetVisualStyle(string text)
         {
-            return text;
+            if (text is null)
+            {
+               Console.WriteLine("Empty");
+            }
+            this.title = text;
         }
 
         public override string ToString()
