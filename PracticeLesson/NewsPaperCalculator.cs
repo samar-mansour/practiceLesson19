@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,17 @@ namespace PracticeLesson
     {
         internal static int CalcNumberOfChars(Newspaper newspaper)
         {
-            return newspaper.GetStories().Length;
+            int count = 0;
+            
+            for (int i = 0; i < newspaper.GetStories().Length; i++)
+            {
+                if (newspaper.GetStories()[i] != null)
+                {
+                    count += newspaper.GetStories()[i].GetBody().Length;
+                    count += newspaper.GetStories()[i].GetTitle().Length;
+                }
+            }
+            return count;
         }
     }
 }
