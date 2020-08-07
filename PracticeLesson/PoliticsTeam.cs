@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +10,16 @@ namespace PracticeLesson
     {
         internal override void AddStyle()
         {
-            Console.WriteLine();
+            string text = Console.ReadLine();
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.WriteLine(story.GetVisualStyle());
+            story.SetVisualStyle(text);
         }
 
         internal override void CreateStory()
         {
-            Console.WriteLine(story.GetTitle());
-            Console.WriteLine(story.GetBody());
+            story.SetTitle(story.GetTitle());
+            story.SetBody(story.GetBody());
 
         }
     }
